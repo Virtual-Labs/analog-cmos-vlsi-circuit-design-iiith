@@ -1,3 +1,14 @@
+JAVAC=javac
+sources = $(vlab3 *.java)
+classes = $(sources:.java=.class)
+
+all: $(classes)
+
+clean :
+	rm -rf *.class
+%.class : %.java
+	$(JAVAC) $<
+
 build-dir=../build
 lib-dir=lib
 build-js-dir=${build-dir}/js
